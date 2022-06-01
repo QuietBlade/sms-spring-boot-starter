@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: sms-sender
+server:
+  port: 8002
+
+sms:
+  # 发送短信服务, 目前仅支持 腾讯云短信(tencent) \ 阿里云短信(aliyun)
+  type: 'aliyun'
+  aliyun:
+    # 区域id 和 区域dns 一般不会改动
+    area-id: cn-beijing
+    area-address: dysmsapi.aliyuncs.com
+    # 签名内容
+    sign-name: 测试模板
+
+    access-key-id: xxxxxxxxxxxxxxxxxx
+    access-key-secret: xxxxxxxxxxxxxxxxxx
+    # 模板id, 请自主申请 内容是： 您的验证码是 ${code}，该验证码5分钟内有效，请勿泄漏于他人！
+    template-code: SMS_240000000
+  tencent:
+    # 腾讯云短信需要提供应用id才可以发送短信
+    app-id: 1400294213
+    # 腾讯云dns地区id 和 dns地址，一般不会改动
+    area-id: ap-guangzhou
+    area-address: sms.tencentcloudapi.com
+    # 签名
+    sign-name: 测试模板
+    access-key-id: xxxxxxxxxxxxxxxxxx
+    access-key-secret: xxxxxxxxxxxxxxxxxx
+    # 模板id， 内容是： 您的验证码是 {1}，该验证码5分钟内有效，请勿泄漏于他人！
+    template-code: 1400000

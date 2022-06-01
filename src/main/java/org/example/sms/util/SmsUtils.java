@@ -82,7 +82,7 @@ public class SmsUtils {
      * @return 返回json结果字符串
      */
     public String sendAliyunSms(String templateCode, String to, Map<String,String> params) throws Exception {
-        return this.sendAliyunSms(aliyunAccessKey.getTemplateCode(), to, new Gson().toJson(params));
+        return this.sendAliyunSms(templateCode, to, new Gson().toJson(params));
     }
 
     /**
